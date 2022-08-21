@@ -1,0 +1,24 @@
+{
+  "name": "@cq/auction-frontend",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.0",
+    "eventemitter3": "^4.0.7",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.3",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7",
+    "vue-tsc": "^0.39.5"
+  }
+}
