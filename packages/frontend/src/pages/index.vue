@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-5">
+  <div class="container">
     <div class="my-5 d-flex justify-content-center align-items-center gap-4">
       <h1>Czequestria Auction Admin</h1>
 
