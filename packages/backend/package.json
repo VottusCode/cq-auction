@@ -1,25 +1,29 @@
 {
   "name": "@cq/auction-backend",
   "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
   "main": "src/index.ts",
   "dependencies": {
     "@fastify/cors": "^8.1.0",
     "@fastify/websocket": "^7.0.0",
     "@prisma/client": "^4.2.1",
-    "contairy": "^1.0.0-1",
+    "contairy": "^1.0.1-1",
     "eventemitter3": "^4.0.7",
     "fastify": "^4.5.2",
     "fastify-plugin": "^4.2.0",
+    "pino-pretty": "^9.1.1",
     "prisma": "^4.2.1"
   },
   "devDependencies": {
     "@types/node": "^18.7.8",
     "cross-env": "^7.0.3",
     "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development ts-node .",
-    "prod": "cross-env NODE_ENV=production ts-node ."
+    "dev": "cross-env NODE_ENV=development tsnd src",
+    "prod": "cross-env NODE_ENV=production node dist"
   }
 }

@@ -42,15 +42,15 @@ export class ItemsRepository {
 
     public static async createItem(data: CreateItemData) {
         return $axios.request({
-            method: "GET",
-            url: "/items",
+            method: "PUT",
+            url: "/item",
             data,
         });
     }
 
     public static async updateItem(itemId: number, data: Partial<CreateItemData>) {
         return $axios.request({
-            method: "GET",
+            method: "POST",
             url: `/item/${itemId}`,
             data,
         });

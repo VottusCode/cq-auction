@@ -10,29 +10,44 @@ import { Globals } from "./data/globals";
 import { biddingController } from "./controllers/bidding";
 
 const db = new PrismaClient();
-const server = fastify();
 const globals = new Globals();
 
+const server = fastify({
+  logger:
+    process.env.NODE_ENV === "development"
+      ? {
+          transport: {
+            target: "pino-pretty",
+            options: {
+              translateTime: "HH:MM:ss Z",
+              ignore: "pid,hostname",
+            },
+          },
+        }
+      : true,
+});
+
 registerContainerServices({
-    db,
-    server,
-    globals,
+  db,
+  server,
+  globals,
 });
 
 server.register(cors, {
-    origin: "*",
+  origin: process.env.FRONTEND_URL ?? "http://localhost:5173",
+  credentials: true,
 });
 
 server.setErrorHandler((err, req, res) => {
-    console.log(err);
+  console.log(err);
 
-    res.send({ message: err.message });
+  res.send({ message: err.message });
 });
 
 server.register(fastifyWebsocket, {
-    options: {
-        maxPayload: 1048576,
-    },
+  options: {
+    maxPayload: 1048576,
+  },
 });
 
 server.register(itemsController);
@@ -41,8 +56,8 @@ server.register(biddingController);
 server.register(websocketController);
 
 server
-    .listen({
-        port: 3000,
-        host: "127.0.0.1",
-    })
-    .then((s) => console.log("Server started", s));
+  .listen({
+    port: 3000,
+    host: "127.0.0.1",
+  })
+  .then((s) => console.log("Server started", s));

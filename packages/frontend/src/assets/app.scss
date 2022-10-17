@@ -1,0 +1,13 @@
+$purple: rgb(155, 81, 224);
+$primary: $purple;
+$dark: rgb(55 65 81);
+
+$body-bg: rgb(31 41 55);
+$body-color: rgb(255, 255, 255);
+
+$input-bg: $dark;
+$select-bg: $dark;
+
+@import "../../node_modules/bootswatch/dist/solar/variables";
+@import "bootstrap/scss/bootstrap";
+@import "../../node_modules/bootswatch/dist/solar/bootswatch";

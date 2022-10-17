@@ -1,20 +1,27 @@
 <template>
-    <div class="container mt-4">
-        <router-link to="/" class="btn btn-gray btn-outline-primary mb-4">Jít zpět</router-link>
+    <div class="container pt-4">
+        <router-link to="/" class="btn btn-gray btn-outline-primary my-5">Jít zpět</router-link>
+
+        <h3 class="mb-5">Add new item</h3>
+
         <form @submit.prevent="createItem">
-            <div class="form-group mb-2">
+            <div class="form-group mb-3">
+                <label class="mb-2">Initial price</label>
                 <input type="number" class="form-control" placeholder="Initial price" v-model="form.initialPrice" />
             </div>
 
-            <div class="form-group mb-2">
-                <input type="text" class="form-control" placeholder="Donated by" v-model="form.donatedBy" />
+            <div class="form-group mb-3">
+                <label class="mb-2">Donator</label>
+                <input type="text" class="form-control" placeholder="Donator" v-model="form.donatedBy" />
             </div>
 
-            <div class="form-group mb-2">
+            <div class="form-group mb-3">
+                <label class="mb-2">Description</label>
                 <input type="text" class="form-control" placeholder="Description" v-model="form.description" />
             </div>
 
-            <div class="form-group mb-2">
+            <div class="form-group mb-3">
+                <label class="mb-2">Image file name (in public/img)</label>
                 <input type="text" class="form-control" placeholder="Image file name" v-model="form.image" />
             </div>
 

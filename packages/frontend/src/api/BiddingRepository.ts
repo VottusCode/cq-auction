@@ -4,7 +4,7 @@ export class BiddingRepository {
     public static async setCurrentItem(itemId: number | null) {
         return $axios.request({
             method: "POST",
-            url: "/item",
+            url: "/current-item",
             data: {
                 itemId,
             },

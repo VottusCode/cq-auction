@@ -1,10 +1,10 @@
-import axios from "axios";
+import { $axios } from ".";
 
 export class DataRepository {
     public static async setCustomMessage(customMessage: string) {
-        return axios.request({
+        return $axios.request({
             method: "POST",
-            url: "/message",
+            url: "/set-message",
             data: {
                 customMessage
             }

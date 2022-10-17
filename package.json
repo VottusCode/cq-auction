@@ -1,0 +1,16 @@
+{
+  "name": "@cq/auction",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:VottusCode/cq-auction.git",
+  "author": "May Lilian <vottus@vott.us>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "backend": "yarn workspace @cq/auction-backend",
+    "frontend": "yarn workspace @cq/auction-frontend"
+  }
+}

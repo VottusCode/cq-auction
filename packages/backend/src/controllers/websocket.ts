@@ -7,6 +7,8 @@ export const websocketController = fp(async (app) => {
     const globals = $s("globals")
 
     app.get('/ws', { websocket: true }, (connection, req) => {
+
+        console.log("connection")
         const fetchData = async () => ({
             customMessage: globals.getCustomMessage() ?? "",
             items: await db.auctionItem.findMany({ orderBy: {

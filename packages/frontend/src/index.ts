@@ -2,6 +2,6 @@ import { createApp } from 'vue'
 import Container from "./pages/Container.vue";
 import { router } from './router';
 
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import './assets/app.scss';
 
 createApp(Container).use(router).mount('#app')
